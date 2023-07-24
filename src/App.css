@@ -1,38 +1,143 @@
-.App {
+/* Overall page layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* Navigation bar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #6c63ff;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  padding: 5px;
+}
+
+/* Search bar styling */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #6c63ff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: calc(100% - 20px); /* Adjust the width to match the table width */
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #534dc7;
+}
+
+/* Table styling */
+.table {
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 600px; /* Set a minimum width for the table */
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+th,
+td {
+  padding: 14px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  background-color: #6c63ff;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.feature {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.icon {
+  font-size: 48px;
+  color: #6c63ff;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.features p {
+  font-size: 16px;
+  color: #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+/* Responsive layout */
+@media (max-width: 600px) {
+  .navbar {
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .vertical-line {
+  display: none;
   }
-}
+  
+  .features {
+  flex-direction: column;
+  }
+  
+  .feature {
+  margin-bottom: 20px;
+  }
+  
+ 
+  .table {
+  overflow-x: scroll;
+  width: 100%; 
+  }
+  
+  table {
+  width: 100%; 
+  min-width: unset; 
+  }
+  }
